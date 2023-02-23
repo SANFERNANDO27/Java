@@ -1,0 +1,69 @@
+package creador_de_objetos;
+
+public class estudiante {
+	
+	String nombre;
+	int grado;
+	String grupo;
+	String sexo;
+	
+	String pronombre;
+	String pronombre2;
+	
+	public estudiante(String nombre, int grado, String grupo, String sexo) {
+		this.nombre = nombre;
+		this.grado = grado;
+		this.grupo = grupo;
+		this.sexo = sexo;
+		
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public int getGrado() {
+		return grado;
+	}
+	
+	public String getGrupo() {
+		return grupo;
+	}
+	
+	public String getSexo() {
+		return sexo;
+	}
+	
+	public String getInformacion() {
+		
+		// obtener pronombre segun el sexo
+		if(this.getSexo() == "hombre" || this.getSexo() == "Hombre" || this.getSexo() == "HOMBRE") {
+			pronombre = "un ";
+			pronombre2 = "o ";
+		}else if(this.getSexo() == "mujer" || this.getSexo() == "Mujer" || this.getSexo() == "MUJER") {
+			pronombre = "una ";
+			pronombre2 = "a ";
+		}
+		
+		// producto
+		return ("Hola soy " + pronombre + "estudiante llamad" + pronombre2 + this.getNombre() + " soy del grado y grupo " + this.getGrado() + "°" 
+				+ this.getGrupo() + " y soy " + this.getSexo());
+		
+	}
+	
+	public static void main(String[] args) {
+		estudiante Emilio = new estudiante("Emilio", 9, "C", "hombre");
+		estudiante Sofia = new estudiante("Sofia", 11, "B", "mujer");
+		estudiante Raul = new estudiante("Raul", 9, "A", "Hombre");
+		estudiante Emily = new estudiante("Emily", 10, "F", "Mujer");
+		estudiante Matias = new estudiante("Matias", 10, "C", "HOMBRE");
+		estudiante Regina = new estudiante("Regina", 7, "B", "MUJER");
+		
+		System.out.println(Matias.getInformacion());
+		System.out.println(Sofia.getInformacion());
+		System.out.println(Raul.getInformacion());
+		System.out.println(Emilio.getInformacion());
+		System.out.println(Emily.getInformacion());
+		System.out.println(Regina.getInformacion());
+	}
+}
