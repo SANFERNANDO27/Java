@@ -1,0 +1,56 @@
+package creador_de_objetos;
+
+// Identificador: Nombre unico del objeto
+// Estado: Estado o contexto variable que tiene el objeto
+// Comportamiento: Las funciones con las que cumple el objeto (metodo)
+
+public class Perros {
+	//Instance Variables
+	String nombre; // Identificador
+	String raza; // Estado
+	int edad; // Estado
+	String color; // Estado
+	
+	//Constructor declaraciones de la classe y definidor de variables
+	public Perros(String nombre, String raza, int edad, String color) {
+		this.nombre = nombre;
+		this.raza = raza;
+		this.edad = edad;
+		this.color = color;
+		
+	}
+	
+	//metodo (comportamiento) 1
+	public String getNombre() {
+		return nombre;
+	}
+	
+	//metodo (comportamiento) 2
+	public String getRaza() {
+		return raza;
+	}
+	
+	//metodo (comportamiento) 3
+	public int getEdad() {
+		return edad;
+	}
+	
+	//metodo (comportamiento) 4
+	public String getColor() {
+		return color;
+	}
+	
+	//metodo (comportamiento) 5
+	public String getInformacion() {
+		return ("Hola mi nombre es " + 
+				this.getNombre() + ", My raza, edad y color son: " + 
+				this.getRaza() + " " + this.getEdad() + " " + this.getColor());
+	}
+	
+	public static void main(String[] args) {
+		Perros Dali = new Perros("Dali", "Yorkshire terrier", 12, "plateado");
+		Perros Maggie = new Perros("Maggie", "Yorkshire terrier", 4, "negro");
+		System.out.println(Dali.getInformacion());
+		System.out.println(Maggie.getInformacion());
+	}
+}
